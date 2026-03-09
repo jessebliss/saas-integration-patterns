@@ -1,0 +1,16 @@
+{
+  "comment": "Example API request with idempotency key (typically sent as header)",
+  "headers": {
+    "Idempotency-Key": "550e8400-e29b-41d4-a716-446655440000",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer sk_live_..."
+  },
+  "method": "POST",
+  "url": "https://api.example.com/v1/orders",
+  "body": {
+    "account_id": "acc_xyz789",
+    "product_id": "prod_123",
+    "quantity": 2,
+    "idempotency_key": "550e8400-e29b-41d4-a716-446655440000"
+  }
+}

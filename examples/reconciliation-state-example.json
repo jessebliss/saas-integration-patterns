@@ -1,0 +1,14 @@
+{
+  "comment": "Minimal state to support batch reconciliation with a provider",
+  "integration_id": "int_crm_abc",
+  "last_sync_at": "2024-03-15T12:00:00Z",
+  "last_cursor": "page_xyz_end",
+  "last_full_sync_at": "2024-03-01T00:00:00Z",
+  "stats": {
+    "entities_fetched": 1050,
+    "created": 12,
+    "updated": 43,
+    "unchanged": 995,
+    "errors": 0
+  }
+}
