@@ -141,6 +141,16 @@ For high volume or multi-step flows, use a queue between ingestion and processin
 - **Webhook payloads**: Include `schema_version` or `event_version`; evolve with additive changes when possible; document breaking changes and migration.
 - **Backward compatibility**: New optional fields are safe; changing types or required fields is breaking—version and communicate.
 
+### Error Handling Taxonomy
+
+A shared error taxonomy keeps retries, alerts, and triage consistent across integrations.
+
+- Treat **429** and **5xx** as retryable (with policy limits).
+- Treat most **4xx** as non-retryable and route to data/config fixes.
+- Use stable internal error codes (e.g., `INT_RATE_429`) for dashboards and runbooks.
+
+See `patterns/error-taxonomy.md` and `examples/dead-letter-event.json` for a practical model.
+
 ### Integration Monitoring
 
 - **Metrics**: Request count, latency, error rate by endpoint and integration; webhook delivery success and retries.
@@ -161,11 +171,13 @@ saas-integration-patterns/
 │   ├── webhook-handling.md      # Webhook receipt, verification, idempotency
 │   ├── idempotency.md           # Idempotency keys and replay
 │   ├── retry-and-backoff.md     # Client and server retry behavior
-│   └── schema-versioning.md     # API and payload versioning
+│   ├── schema-versioning.md     # API and payload versioning
+│   └── error-taxonomy.md        # Retry matrix and failure classes
 ├── examples/
 │   ├── webhook-payload-example.json
 │   ├── api-request-idempotency.json
-│   └── reconciliation-state-example.json
+│   ├── reconciliation-state-example.json
+│   └── dead-letter-event.json
 └── diagrams/
     └── integration-topologies.md   # ASCII diagrams for common topologies
 ```

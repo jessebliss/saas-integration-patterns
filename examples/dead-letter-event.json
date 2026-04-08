@@ -1,0 +1,17 @@
+{
+  "id": "dlq_0001",
+  "integration_id": "int_crm_abc",
+  "source": "webhook",
+  "event_id": "evt_9k2j8h3g7f",
+  "received_at": "2024-03-15T14:32:00Z",
+  "failed_at": "2024-03-15T14:44:21Z",
+  "attempts": 5,
+  "error": {
+    "code": "INT_RATE_429",
+    "http_status": 429,
+    "message": "Provider rate limit exceeded after max retries",
+    "retry_after_seconds": 30
+  },
+  "payload_ref": "s3://integration-dlq/events/evt_9k2j8h3g7f.json",
+  "next_action": "manual_replay_or_backfill"
+}
