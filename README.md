@@ -188,3 +188,14 @@ saas-integration-patterns/
 
 - **ai-document-ingestion-workflow**: Document pipeline that may consume webhooks (e.g., new document) and call SaaS APIs (e.g., CRM record creation).
 - **ai-product-workflow-experiments**: Product thinking on workflows that combine AI and integrations.
+
+---
+
+## Quality Checks
+
+Run local markdown-link validation and tests:
+
+```bash
+python3 tools/validate_markdown_links.py
+python3 -m unittest discover -s tests -p "test_*.py"
+```
