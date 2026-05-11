@@ -151,6 +151,11 @@ A shared error taxonomy keeps retries, alerts, and triage consistent across inte
 
 See `patterns/error-taxonomy.md` and `examples/dead-letter-event.json` for a practical model.
 
+### Observability and replay
+
+- **Tracing**: Propagate a correlation ID across webhook receipt, queues, workers, and outbound API calls. See `patterns/correlation-and-tracing.md`.
+- **Backfill / replay**: Re-drive historical work safely with idempotency and rate-limit discipline. See `patterns/backfill-and-replay.md`.
+
 ### Integration Monitoring
 
 - **Metrics**: Request count, latency, error rate by endpoint and integration; webhook delivery success and retries.
@@ -172,7 +177,9 @@ saas-integration-patterns/
 │   ├── idempotency.md           # Idempotency keys and replay
 │   ├── retry-and-backoff.md     # Client and server retry behavior
 │   ├── schema-versioning.md     # API and payload versioning
-│   └── error-taxonomy.md        # Retry matrix and failure classes
+│   ├── error-taxonomy.md        # Retry matrix and failure classes
+│   ├── correlation-and-tracing.md # End-to-end correlation and tracing
+│   └── backfill-and-replay.md   # Historical replay without duplicates
 ├── examples/
 │   ├── webhook-payload-example.json
 │   ├── api-request-idempotency.json
