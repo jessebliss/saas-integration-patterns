@@ -163,7 +163,7 @@ See `patterns/error-taxonomy.md` and `examples/dead-letter-event.json` for a pra
 - **Logging**: Correlation ID across request → queue → worker; log event_id and idempotency key for debugging.
 - **Dashboards**: Per-integration health; sync lag; queue depth.
 
-See `patterns/` for detailed pattern write-ups and `examples/` for sample requests and webhook payloads. For provider throttling behavior, see `patterns/rate-limit-handling.md`.
+See `patterns/` for detailed pattern write-ups and `examples/` for sample requests and webhook payloads. For provider throttling behavior, see `patterns/rate-limit-handling.md`. For downstream failure isolation, see `patterns/circuit-breaker.md`.
 
 ---
 
@@ -180,13 +180,15 @@ saas-integration-patterns/
 │   ├── error-taxonomy.md        # Retry matrix and failure classes
 │   ├── correlation-and-tracing.md # End-to-end correlation and tracing
 │   ├── backfill-and-replay.md   # Historical replay without duplicates
-│   └── rate-limit-handling.md   # 429 handling, backoff, and ops playbook
+│   ├── rate-limit-handling.md   # 429 handling, backoff, and ops playbook
+│   └── circuit-breaker.md       # Fast-fail protection for unhealthy integrations
 ├── examples/
 │   ├── webhook-payload-example.json
 │   ├── api-request-idempotency.json
 │   ├── reconciliation-state-example.json
 │   ├── dead-letter-event.json
-│   └── rate-limit-response-headers.json
+│   ├── rate-limit-response-headers.json
+│   └── circuit-breaker-state.json
 └── diagrams/
     └── integration-topologies.md   # ASCII diagrams for common topologies
 ```

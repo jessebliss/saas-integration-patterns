@@ -1,0 +1,22 @@
+{
+  "integration": "crm-account-sync",
+  "state": "half_open",
+  "windowSeconds": 60,
+  "stats": {
+    "requests": 24,
+    "failures": 13,
+    "failureRate": 0.54
+  },
+  "thresholds": {
+    "failureRate": 0.5,
+    "minimumRequests": 20,
+    "cooldownSeconds": 30,
+    "halfOpenProbeLimit": 3
+  },
+  "timestamps": {
+    "openedAt": "2026-07-08T15:44:10Z",
+    "cooldownEndsAt": "2026-07-08T15:44:40Z",
+    "lastProbeAt": "2026-07-08T15:44:41Z"
+  },
+  "nextAction": "allow_probe_traffic"
+}
